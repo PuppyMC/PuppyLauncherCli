@@ -1,11 +1,11 @@
 # アカウント管理
 
-MeowLauncherCli はローカルオフラインアカウントを `<exedir>/.meowlaunch/data/users.json` に保存します。
+PuppyLauncherCli はローカルオフラインアカウントを `<exedir>/.puppylaunch/data/users.json` に保存します。
 
 ## ローカルアカウントを追加
 
 ```
-meowlaunchcli account local add <ユーザー名>
+puppylaunchcli account local add <ユーザー名>
 ```
 
 - `name`: 指定したユーザー名
@@ -15,7 +15,7 @@ meowlaunchcli account local add <ユーザー名>
 ## ローカルアカウントを削除
 
 ```
-meowlaunchcli account local del <ユーザー名>
+puppylaunchcli account local del <ユーザー名>
 ```
 
 見つからない場合は「アカウントが見つかりません」と表示されます。
@@ -23,11 +23,11 @@ meowlaunchcli account local del <ユーザー名>
 ## ローカルアカウント一覧
 
 ```
-meowlaunchcli account local show
+puppylaunchcli account local show
 ```
 
 ローカルアカウントを1行ずつ表示します。
 
 ## 保存場所
 
-`<exedir>/.meowlaunch/data/users.json`
+`<exedir>/.puppylaunch/data/users.json`

@@ -2,7 +2,7 @@
 #define ACCOUNT_H
 
 /*
- * Local offline accounts. Persisted to ~/.meowlaunch/data/users.json.
+ * Local offline accounts. Persisted to ~/.puppylaunch/data/users.json.
  */
 
 /* Add a local account with the given username. Prints feedback via stdout.

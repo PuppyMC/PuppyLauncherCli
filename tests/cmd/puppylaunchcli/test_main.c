@@ -1,5 +1,5 @@
 /*
- * Entry-point tests for cmd/meowlaunchcli/main.c.
+ * Entry-point tests for cmd/puppylaunchcli/main.c.
  *
  * The entry point is a real binary; these tests run it as a subprocess and
  * assert on exit codes and stderr/stdout. Built by scripts/test.sh.
@@ -34,10 +34,10 @@ int main(void)
 {
     char buf[512];
     int rc;
-    const char *bin = getenv("MEOWLAUNCH_BIN");
+    const char *bin = getenv("PUPPYLAUNCH_BIN");
     char cmd[128];
     if (bin == NULL || bin[0] == '\0') {
-        bin = "./build/meowlaunchcli";
+        bin = "./build/puppylaunchcli";
     }
 
     /* Unknown command: exits nonzero and prints "Unknown command: <name>".
@@ -52,14 +52,14 @@ int main(void)
     snprintf(cmd, sizeof cmd, "%s 2>&1", bin);
     rc = run_capture(cmd, buf, sizeof buf);
     CHECK(rc == 0, "bare invocation exits 0");
-    CHECK(strstr(buf, "Usage: meowlaunchcli") != NULL,
+    CHECK(strstr(buf, "Usage: puppylaunchcli") != NULL,
           "bare invocation prints usage");
 
     /* version: exits 0. */
     snprintf(cmd, sizeof cmd, "%s version 2>&1", bin);
     rc = run_capture(cmd, buf, sizeof buf);
     CHECK(rc == 0, "version exits 0");
-    CHECK(strstr(buf, "MeowLauncherCli v") != NULL,
+    CHECK(strstr(buf, "PuppyLauncherCli v") != NULL,
           "version prints banner");
 
     /* account help: exits 0 and prints account help. */
@@ -98,7 +98,7 @@ int main(void)
     snprintf(cmd, sizeof cmd, "%s game 2>&1", bin);
     rc = run_capture(cmd, buf, sizeof buf);
     CHECK(rc != 0, "game no subcommand exits nonzero");
-    CHECK(strstr(buf, "Usage: meowlaunchcli game") != NULL,
+    CHECK(strstr(buf, "Usage: puppylaunchcli game") != NULL,
           "game no subcommand prints usage");
 
     /* game switch/current/show. */

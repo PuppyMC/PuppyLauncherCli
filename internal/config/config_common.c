@@ -14,7 +14,7 @@ int config_path(char *buf, size_t bufsz)
 {
     char dir[1024];
     if (Plat_ExeDir(dir, sizeof dir) != 0) return -1;
-    return Plat_Join(buf, bufsz, dir, ".meowlaunch/config.json");
+    return Plat_Join(buf, bufsz, dir, ".puppylaunch/config.json");
 }
 
 void config_read_str(const char *key, const char *def, char *out, size_t outsz)

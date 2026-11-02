@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Smoke tests for MeowLauncherCli.
+# Smoke tests for PuppyLauncherCli.
 #
 # Usage:
 #   ./scripts/test.sh
@@ -41,7 +41,7 @@ CFLAGS="$CFLAGS -DGIT_VERSION=\"$GIT_VERSION\""
 SOURCES=()
 while IFS= read -r f; do SOURCES+=("$f"); done < <(find . -name '*.c' -not -path './.git/*' -not -path './tests/*')
 njobs="$(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4)"
-BIN="$test_dir/meowlaunchcli${bin_suffix}"
+BIN="$test_dir/puppylaunchcli${bin_suffix}"
 status=0
 
 # Collect "PASS|name" / "FAIL|name" rows; rendered into JUnit XML at exit.
@@ -110,16 +110,16 @@ rebuild ""
 
 # 1. No arguments: prints help, exits 0.
 out="$("$BIN")"
-echo "$out" | grep -q "Usage: meowlaunchcli" \
+echo "$out" | grep -q "Usage: puppylaunchcli" \
     && check "bare invocation prints help" true \
     || { echo "[FAIL] bare invocation missing usage line"; results+=("FAIL|bare invocation prints help"); status=1; }
 
 # 2. help subcommand: exits 0.
 check "help subcommand exits 0" "$BIN" help
 
-# 3. version: matches "MeowLauncherCli v<semver> build <git>".
+# 3. version: matches "PuppyLauncherCli v<semver> build <git>".
 out="$("$BIN" version)"
-echo "$out" | grep -Eq "^MeowLauncherCli v[0-9]+\.[0-9]+\.[0-9]+ build .+" \
+echo "$out" | grep -Eq "^PuppyLauncherCli v[0-9]+\.[0-9]+\.[0-9]+ build .+" \
     && check "version output format" true \
     || { echo "[FAIL] unexpected version output: $out"; results+=("FAIL|version output format"); status=1; }
 
@@ -133,7 +133,7 @@ else
 fi
 
 # 5. Locale detection: an unrelated system locale falls back to English.
-LANG=fr_FR.UTF-8 "$BIN" | grep -q "Usage: meowlaunchcli" \
+LANG=fr_FR.UTF-8 "$BIN" | grep -q "Usage: puppylaunchcli" \
     && results+=("PASS|fr locale falls back to english") \
     || { echo "[FAIL] fr locale did not fall back to English"; results+=("FAIL|fr locale falls back to english"); status=1; }
 
@@ -150,14 +150,14 @@ LANG=ja_JP.UTF-8 "$BIN" | grep -q "コマンド:" \
 # 8. Single-language build (LANGS=en): any system locale still yields English.
 echo "[INFO] Single-language build check..."
 rebuild "en"
-LANG=zh_TW.UTF-8 "$BIN" | grep -q "Usage: meowlaunchcli" \
+LANG=zh_TW.UTF-8 "$BIN" | grep -q "Usage: puppylaunchcli" \
     && results+=("PASS|single-lang build ignores locale") \
     || { echo "[FAIL] single-lang build ignored LANGS"; results+=("FAIL|single-lang build ignores locale"); status=1; }
 
 # 9. Language not compiled in (LANGS=en ja-JP): zh locale falls back English.
 echo "[INFO] Uncompiled-language fallback check..."
 rebuild "en ja-JP"
-LANG=zh_TW.UTF-8 "$BIN" | grep -q "Usage: meowlaunchcli" \
+LANG=zh_TW.UTF-8 "$BIN" | grep -q "Usage: puppylaunchcli" \
     && results+=("PASS|uncompiled language falls back to english") \
     || { echo "[FAIL] uncompiled zh locale did not fall back to English"; results+=("FAIL|uncompiled language falls back to english"); status=1; }
 
@@ -204,7 +204,7 @@ for test_src in $(find tests -name 'test_*.c'); do
         continue
     fi
     echo "[INFO] == $mod =="
-    if MEOWLAUNCH_BIN="$BIN" "$unit_bin"; then
+    if PUPPYLAUNCH_BIN="$BIN" "$unit_bin"; then
         results+=("PASS|unit test $mod")
     else
         echo "[FAIL] unit test $mod"
@@ -218,7 +218,7 @@ junit="$test_dir/junit.xml"
 {
     echo '<?xml version="1.0" encoding="UTF-8"?>'
     echo '<testsuites>'
-    echo "  <testsuite name=\"meowlaunchcli\" tests=\"${#results[@]}\">"
+    echo "  <testsuite name=\"puppylaunchcli\" tests=\"${#results[@]}\">"
     for row in "${results[@]}"; do
         state="${row%%|*}"
         name="${row#*|}"

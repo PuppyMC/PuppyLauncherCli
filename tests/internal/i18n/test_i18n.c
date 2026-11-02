@@ -40,7 +40,7 @@ int main(void)
     /* --- Public locale/lookup path --- */
     set_lang("C");
     I18n_Init();
-    CHECK(strcmp(I18n("help.usage"), "Usage: meowlaunchcli [command] [arguments]") == 0,
+    CHECK(strcmp(I18n("help.usage"), "Usage: puppylaunchcli [command] [arguments]") == 0,
           "english help.usage");
 
     set_lang("fr_FR.UTF-8");

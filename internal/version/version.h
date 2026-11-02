@@ -2,7 +2,7 @@
 #define VERSION_H
 
 /*
- * Print the current MeowLauncherCli version to stdout.
+ * Print the current PuppyLauncherCli version to stdout.
  *
  * Invoked by the "version" subcommand.
  */

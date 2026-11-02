@@ -1,11 +1,11 @@
 # Account management
 
-MeowLauncherCli stores local offline accounts under `<exedir>/.meowlaunch/data/users.json`.
+PuppyLauncherCli stores local offline accounts under `<exedir>/.puppylaunch/data/users.json`.
 
 ## Add a local account
 
 ```
-meowlaunchcli account local add <username>
+puppylaunchcli account local add <username>
 ```
 
 Creates an entry with:
@@ -16,7 +16,7 @@ Creates an entry with:
 ## Remove a local account
 
 ```
-meowlaunchcli account local del <username>
+puppylaunchcli account local del <username>
 ```
 
 Removes the matching entry. Prints "Account not found" when no match.
@@ -24,7 +24,7 @@ Removes the matching entry. Prints "Account not found" when no match.
 ## List local accounts
 
 ```
-meowlaunchcli account local show
+puppylaunchcli account local show
 ```
 
 Prints each local account name on its own line.
@@ -39,4 +39,4 @@ Prints each local account name on its own line.
 }
 ```
 
-Path: `<exedir>/.meowlaunch/data/users.json`.
+Path: `<exedir>/.puppylaunch/data/users.json`.

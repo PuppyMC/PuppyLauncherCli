@@ -1,8 +1,8 @@
-# MeowLauncherCli
+# PuppyLauncherCli
 
-<a href="https://github.com/MoeCinnamo/MeowLauncherCli/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/MoeCinnamo/MeowLauncherCli/ci.yml?branch=main&style=flat-square"></a>
-<a href="https://codecov.io/gh/MoeCinnamo/MeowLauncherCli"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/MoeCinnamo/MeowLauncherCli?style=flat-square"></a>
-<a href="https://github.com/MoeCinnamo/MeowLauncherCli/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/MoeCinnamo/MeowLauncherCli?style=flat-square"></a>
+<a href="https://github.com/PuppyMC/PuppyLauncherCli/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/PuppyMC/PuppyLauncherCli/ci.yml?branch=main&style=flat-square"></a>
+<a href="https://codecov.io/gh/PuppyMC/PuppyLauncherCli"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/PuppyMC/PuppyLauncherCli?style=flat-square"></a>
+<a href="https://github.com/PuppyMC/PuppyLauncherCli/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/PuppyMC/PuppyLauncherCli?style=flat-square"></a>
 
 [English](README.md) [繁體中文 (台湾)](README-zh_TW.md) [繁體中文 (香港)](README-zh_HK.md) [日本語](README-ja_JP.md)
 
@@ -10,16 +10,16 @@
 
 ## Overview
 
-MeowLauncherCli is a **pure command-line launcher for Minecraft**. It aims to bring together nearly everything a Minecraft player needs — game versions, mods, skins, worlds and more — into a single, scriptable, zero-GUI application.
+PuppyLauncherCli is a **pure command-line launcher for Minecraft**. It aims to bring together nearly everything a Minecraft player needs — game versions, mods, skins, worlds and more — into a single, scriptable, zero-GUI application.
 
 No windows, no icons, no tray icon. Just a terminal. If someone glances at the screen, it looks like you are busy programming.
 
 ## Usage
 
 ```sh
-meowlaunchcli            # no arguments: print the help list (busybox-style)
-meowlaunchcli version    # MeowLauncherCli v0.0.1 build <git>
-meowlaunchcli <command>  # dispatch a subcommand
+puppylaunchcli            # no arguments: print the help list (busybox-style)
+puppylaunchcli version    # PuppyLauncherCli v0.0.1 build <git>
+puppylaunchcli <command>  # dispatch a subcommand
 ```
 
 ## Commands
@@ -27,7 +27,7 @@ meowlaunchcli <command>  # dispatch a subcommand
 | Command    | Purpose |
 | ---------- | ------- |
 | `help`     | Show this help list |
-| `version`  | Show MeowLauncherCli version |
+| `version`  | Show PuppyLauncherCli version |
 | `install`  | Install game, mod loaders, mods, packs, modpacks |
 | `remove`   | Remove game, mod loaders, mods, packs, modpacks |
 | `update`   | Refresh game metadata sources |
@@ -50,7 +50,7 @@ The UI language follows the system locale (`$LANG`) automatically. English, Trad
 ./scripts/test.sh       # build + CLI smoke tests
 ```
 
-On Windows (MSYS2/MinGW) the same script uses `gcc` and produces `meowlaunchcli.exe`.
+On Windows (MSYS2/MinGW) the same script uses `gcc` and produces `puppylaunchcli.exe`.
 
 Environment overrides: `CC`, `CFLAGS`, `LDFLAGS`, `LANGS`, `GIT_VERSION`. Instrument a coverage build with `COVERAGE=1`.
 

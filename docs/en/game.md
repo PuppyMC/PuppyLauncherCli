@@ -1,26 +1,26 @@
 # Game version management
 
-The current game version is stored in `<exedir>/.meowlaunch/config.json`.
+The current game version is stored in `<exedir>/.puppylaunch/config.json`.
 Installed versions are directories under `<exedir>/.minecraft/versions/`.
 
 ## Show help
 
 ```
-meowlaunchcli game help
+puppylaunchcli game help
 ```
 
 ## Switch
 
 ```
-meowlaunchcli game switch <version>
+puppylaunchcli game switch <version>
 ```
 
-Writes `{"game_version":"<version>"}` to `.meowlaunch/config.json`.
+Writes `{"game_version":"<version>"}` to `.puppylaunch/config.json`.
 
 ## Show current
 
 ```
-meowlaunchcli game current
+puppylaunchcli game current
 ```
 
 Prints the active version, or `(none)` if not set.
@@ -28,7 +28,7 @@ Prints the active version, or `(none)` if not set.
 ## List installed
 
 ```
-meowlaunchcli game show
+puppylaunchcli game show
 ```
 
 Prints each subdirectory under `.minecraft/versions/`.

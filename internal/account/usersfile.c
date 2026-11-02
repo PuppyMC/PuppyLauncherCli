@@ -19,7 +19,7 @@ int usersfile_path(char *buf, size_t bufsz)
     if (Plat_ExeDir(dir, sizeof dir) != 0) {
         return -1;
     }
-    return Plat_Join(buf, bufsz, dir, ".meowlaunch/data/users.json");
+    return Plat_Join(buf, bufsz, dir, ".puppylaunch/data/users.json");
 }
 
 char *usersfile_load(const char *path)

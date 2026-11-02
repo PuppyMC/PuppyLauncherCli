@@ -1,12 +1,12 @@
-# MeowLauncherCli
+# PuppyLauncherCli
 
 A pure command-line Minecraft launcher. Busbox-style, no REPL.
 
 ## Quick start
 
 ```
-meowlaunchcli            # print help
-meowlaunchcli version    # print version
+puppylaunchcli            # print help
+puppylaunchcli version    # print version
 ```
 
 ## Available commands
@@ -14,7 +14,7 @@ meowlaunchcli version    # print version
 | Command | Description |
 |---------|-------------|
 | `help` | Show this help list |
-| `version` | Show MeowLauncherCli version |
+| `version` | Show PuppyLauncherCli version |
 | `account local add <user>` | Add a local offline account |
 | `account local del <user>` | Remove a local offline account |
 

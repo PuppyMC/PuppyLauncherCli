@@ -58,7 +58,7 @@ int main(void)
     {
         char raw[256];
         size_t got = 0;
-        FILE *f = fopen("build_test/.meowlaunch/config.json", "rb");
+        FILE *f = fopen("build_test/.puppylaunch/config.json", "rb");
         if (f != NULL) {
             got = fread(raw, 1, sizeof raw - 1, f);
             fclose(f);
@@ -68,7 +68,7 @@ int main(void)
               "Game_Switch writes escaped json");
     }
     {
-        char *j = Json_Load("build_test/.meowlaunch/config.json");
+        char *j = Json_Load("build_test/.puppylaunch/config.json");
         size_t vlen;
         const char *v = j != NULL
             ? Json_FindValue(j, j + strlen(j), "game_version", &vlen)
@@ -80,41 +80,41 @@ int main(void)
     }
 
     /* Missing config: Game_Current prints (none). */
-    remove("build_test/.meowlaunch/config.json");
+    remove("build_test/.puppylaunch/config.json");
     CHECK(Game_Current() == 0, "Game_Current missing config");
 
     /* Missing config with malformed JSON: Game_Current prints (none). */
 #ifdef _WIN32
-    _mkdir("build_test/.meowlaunch");
+    _mkdir("build_test/.puppylaunch");
 #else
-    mkdir("build_test/.meowlaunch", 0755);
+    mkdir("build_test/.puppylaunch", 0755);
 #endif
-    FILE *f = fopen("build_test/.meowlaunch/config.json", "w");
+    FILE *f = fopen("build_test/.puppylaunch/config.json", "w");
     fputs("not json", f);
     fclose(f);
     CHECK(Game_Current() == 0, "Game_Current malformed json");
-    remove("build_test/.meowlaunch/config.json");
+    remove("build_test/.puppylaunch/config.json");
 
     /* Missing versions dir: Game_Show prints (no versions directory). */
     rename("build_test/.minecraft/versions", "build_test/.minecraft/versions_bak");
     CHECK(Game_Show() == 0, "Game_Show missing versions dir");
     rename("build_test/.minecraft/versions_bak", "build_test/.minecraft/versions");
 
-    /* Json_Save failure: .meowlaunch path blocked by a file -> rc != 0. */
+    /* Json_Save failure: .puppylaunch path blocked by a file -> rc != 0. */
 #ifdef _WIN32
-    system("rmdir /s /q build_test\\.meowlaunch >nul 2>&1");
+    system("rmdir /s /q build_test\\.puppylaunch >nul 2>&1");
 #else
-    system("rm -rf build_test/.meowlaunch");
+    system("rm -rf build_test/.puppylaunch");
 #endif
     {
-        FILE *f = fopen("build_test/.meowlaunch", "w");
+        FILE *f = fopen("build_test/.puppylaunch", "w");
         if (f != NULL) {
             fputs("x", f);
             fclose(f);
         }
     }
     CHECK(Game_Switch("blocked") == 1, "Game_Switch save fail -> 1");
-    remove("build_test/.meowlaunch");
+    remove("build_test/.puppylaunch");
 
 #ifndef __APPLE__
     /* malloc failure in Json_Escape: esc == NULL -> Game_Switch returns 1. */

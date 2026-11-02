@@ -1,8 +1,8 @@
-# MeowLauncherCli
+# PuppyLauncherCli
 
-<a href="https://github.com/MoeCinnamo/MeowLauncherCli/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/MoeCinnamo/MeowLauncherCli/ci.yml?branch=main&style=flat-square"></a>
-<a href="https://codecov.io/gh/MoeCinnamo/MeowLauncherCli"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/MoeCinnamo/MeowLauncherCli?style=flat-square"></a>
-<a href="https://github.com/MoeCinnamo/MeowLauncherCli/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/MoeCinnamo/MeowLauncherCli?style=flat-square"></a>
+<a href="https://github.com/PuppyMC/PuppyLauncherCli/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/PuppyMC/PuppyLauncherCli/ci.yml?branch=main&style=flat-square"></a>
+<a href="https://codecov.io/gh/PuppyMC/PuppyLauncherCli"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/PuppyMC/PuppyLauncherCli?style=flat-square"></a>
+<a href="https://github.com/PuppyMC/PuppyLauncherCli/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/PuppyMC/PuppyLauncherCli?style=flat-square"></a>
 
 [日本語](README-ja_JP.md) [English](README.md) [繁體中文 (台湾)](README-zh_TW.md) [繁體中文 (香港)](README-zh_HK.md)
 
@@ -10,16 +10,16 @@
 
 ## 概要
 
-MeowLauncherCli は **Pure CLI な Minecraft ランチャー**です。Minecraft プレイヤーに必要なほぼすべて——バージョン、Mod、スキン、ワールドなど——を、GUI を一切持たない単一のスクリプト可能なコマンドラインアプリに集約することを目指しています。
+PuppyLauncherCli は **Pure CLI な Minecraft ランチャー**です。Minecraft プレイヤーに必要なほぼすべて——バージョン、Mod、スキン、ワールドなど——を、GUI を一切持たない単一のスクリプト可能なコマンドラインアプリに集約することを目指しています。
 
 ウィンドウもアイコンもトレイ常駐もありません。あるのはターミナルだけ。画面を覗き込まれても、真面目に開発作業をしているようにしか見えません。
 
 ## 使い方
 
 ```sh
-meowlaunchcli            # 引数なし: ヘルプを表示（busybox 風）
-meowlaunchcli version    # MeowLauncherCli v0.0.1 build <git>
-meowlaunchcli <command>  # サブコマンドを実行
+puppylaunchcli            # 引数なし: ヘルプを表示（busybox 風）
+puppylaunchcli version    # PuppyLauncherCli v0.0.1 build <git>
+puppylaunchcli <command>  # サブコマンドを実行
 ```
 
 ## コマンド
@@ -27,7 +27,7 @@ meowlaunchcli <command>  # サブコマンドを実行
 | コマンド    | 説明 |
 | ----------- | ---- |
 | `help`      | このヘルプを表示 |
-| `version`   | MeowLauncherCli のバージョンを表示 |
+| `version`   | PuppyLauncherCli のバージョンを表示 |
 | `install`   | ゲーム・modローダー・mod・パック・統合パックをインストール |
 | `remove`    | ゲーム・modローダー・mod・パック・統合パックをアンインストール |
 | `update`    | ゲーム情報ソースを更新 |
@@ -50,7 +50,7 @@ UI 言語はシステムロケール（`$LANG`）に自動追従します。英�
 ./scripts/test.sh      # ビルド + CLI スモークテスト
 ```
 
-Windows (MSYS2/MinGW) では同じスクリプトが `gcc` を使い `meowlaunchcli.exe` を生成します。
+Windows (MSYS2/MinGW) では同じスクリプトが `gcc` を使い `puppylaunchcli.exe` を生成します。
 
 環境変数で上書き可能: `CC`, `CFLAGS`, `LDFLAGS`, `LANGS`, `GIT_VERSION`。`COVERAGE=1` でカバレッジ計測用ビルドになります。
 

@@ -1,10 +1,10 @@
 {
   "help": {
     "tagline": "Pure CLI な Minecraft ランチャー",
-    "usage": "使い方: meowlaunchcli [command] [arguments]",
+    "usage": "使い方: puppylaunchcli [command] [arguments]",
     "commands_header": "コマンド:",
     "cmd_help": "このヘルプを表示",
-    "cmd_version": "MeowLauncherCli のバージョンを表示",
+    "cmd_version": "PuppyLauncherCli のバージョンを表示",
     "cmd_install": "ゲーム・modローダー・mod・パック・統合パックをインストール",
     "cmd_remove": "ゲーム・modローダー・mod・パック・統合パックをアンインストール",
     "cmd_update": "ゲーム情報ソースを更新",
@@ -15,13 +15,13 @@
     "cmd_world": "ワールドを管理（現在のゲームバージョン）",
     "cmd_resource": "リソースパックを管理（現在のゲームバージョン）",
     "cmd_config": "設定を表示・変更",
-    "see_help": "'meowlaunchcli <command> help' で詳細を表示。"
+    "see_help": "'puppylaunchcli <command> help' で詳細を表示。"
   },
   "error": {
     "unknown_command": "不明なコマンド: %s"
   },
   "game": {
-    "usage": "使い方: meowlaunchcli game <help|switch|current|show>",
+    "usage": "使い方: puppylaunchcli game <help|switch|current|show>",
     "switched": "切り替えました:",
     "help": {
       "title": "ゲームバージョン管理:",
@@ -31,7 +31,7 @@
     }
   },
   "config": {
-    "usage": "使い方: meowlaunchcli config <java|memory|window|args|precmd|postcmd|gfx|help>",
+    "usage": "使い方: puppylaunchcli config <java|memory|window|args|precmd|postcmd|gfx|help>",
     "help": {
       "title": "設定:",
       "java_set": "Java バージョンを設定 (例: 21)",
@@ -39,7 +39,7 @@
     }
   },
   "account": {
-    "usage": "使い方: meowlaunchcli account local <add|del> <ユーザー名>",
+    "usage": "使い方: puppylaunchcli account local <add|del> <ユーザー名>",
     "help": {
       "title": "アカウント管理:",
       "local_add": "ローカルアカウントを追加",

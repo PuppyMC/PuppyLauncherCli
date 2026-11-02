@@ -2,6 +2,36 @@
 
 Newest record on top.
 
+## 2026-11-02 repository renamed MeowLaunchCli to PuppyLauncherCli (identifiers)
+
+- **Reason**: The upstream repository is now `PuppyMC/PuppyLauncherCli`.
+  Display names (README, `docs/`, `help.cmd_version`) had already been updated,
+  but every executable-level identifier still carried the old `meow` spelling:
+  the binary name, the entry-point directory, the runtime data directory, the
+  test-hook environment variable, and all usage strings derived from them.
+- **Decisions**:
+  - Binary: `meowlaunchcli` -> `puppylaunchcli` (`scripts/build.sh`,
+    `scripts/test.sh`); Windows suffix stays `.exe`.
+  - Source tree: `cmd/meowlaunchcli/` -> `cmd/puppylaunchcli/`,
+    `tests/cmd/meowlaunchcli/` -> `tests/cmd/puppylaunchcli/`.
+  - Runtime data directory: `.meowlaunch` -> `.puppylaunch` in
+    `internal/account/usersfile.c`, `internal/config/config_common.c`,
+    `internal/game/game.c` (`config.json`, `data/users.json`).
+  - Test hook variable: `MEOWLAUNCH_BIN` -> `PUPPYLAUNCH_BIN`
+    (`scripts/test.sh`, `tests/cmd/puppylaunchcli/test_main.c`).
+  - `lang/*.json` `usage`/`see_help` strings updated; the generated
+    `internal/i18n/gen/lang_embedded.h` was regenerated from the archives with
+    the same ordering and escaping rules `scripts/build.sh` uses.
+  - README (all four locales), `docs/`, `SECURITY.md` and the older records in
+    this file updated; `build_test/` was emptied so no stale artifact keeps the
+    old binary name.
+- **Trade-off**: No migration path for existing data: accounts and settings
+  living in `~/.meowlaunch` or `<exedir>/.meowlaunch` are not read by the new
+  binary, and the old directory is left untouched on disk.
+- **Risk**: Recompile on the musl/MinGW toolchain has not been run in this
+  change; verification was limited to static checks (zero `meow` matches, JSON
+  archives parse, generated header consistent with `lang/`).
+
 ## 2026-10-25 platform rmdir + test clean-slate fix
 
 - **Reason**: `tests/internal/platform/test_platform.c` cleared the
@@ -169,14 +199,14 @@ Newest record on top.
 
 - **Reason**: Raise code coverage on `internal/game/help.c`,
   `internal/game/game.c` (Game_Show listing branch, malformed config), and
-  `cmd/meowlaunchcli/main.c` (game/account subcommand dispatch).
+  `cmd/puppylaunchcli/main.c` (game/account subcommand dispatch).
 - **Decisions**:
   - `tests/internal/game/test_help.c`: calls `Game_Help()` with i18n init.
   - `tests/internal/game/test_game.c`: creates fake
     `build_test/.minecraft/versions/{1.21.11,1.21.11-Neoforge}` dirs to cover
     the readdir/S_ISDIR loop; writes malformed `config.json` to cover the
     `Json_FindValue` miss branch in `Game_Current()`.
-  - `tests/cmd/meowlaunchcli/test_main.c`: black-box runs `game help`,
+  - `tests/cmd/puppylaunchcli/test_main.c`: black-box runs `game help`,
     `game` (no subcommand → usage), `game switch/current/show`, and
     `account local show`.
   - `game` with no subcommand now prints `game.usage` and exits nonzero
@@ -185,14 +215,14 @@ Newest record on top.
 
 ## 2026-10-24 Project foundations, module split, tests, i18n, CI (compressed)
 
-- **Reason**: Bootstrap MeowLauncherCli: busybox-style CLI, embedded i18n,
+- **Reason**: Bootstrap PuppyLauncherCli: busybox-style CLI, embedded i18n,
   split internal modules, local account persistence, cross-platform build/test.
 - **Decisions**:
-  - Entry: `cmd/meowlaunchcli/main.c`, non-interactive dispatch, no REPL.
+  - Entry: `cmd/puppylaunchcli/main.c`, non-interactive dispatch, no REPL.
   - `internal/` modules: `json/{io,walk}`, `account/{account,usersfile,uuid,help}`,
     `game/{game,help}`, `i18n`, `help`, `version`. PascalCase exports,
     lowercase static internals.
-  - Data paths: `<exedir>/.meowlaunch/data/users.json`, config.json;
+  - Data paths: `<exedir>/.puppylaunch/data/users.json`, config.json;
     `.minecraft/versions/`.
   - i18n: `lang/*.json` embedded at build time; English fallback; `$LANG`
     selects by prefix.

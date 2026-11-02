@@ -1,10 +1,10 @@
 {
   "help": {
     "tagline": "a pure command-line Minecraft launcher",
-    "usage": "Usage: meowlaunchcli [command] [arguments]",
+    "usage": "Usage: puppylaunchcli [command] [arguments]",
     "commands_header": "Commands:",
     "cmd_help": "Show this help list",
-    "cmd_version": "Show MeowLauncherCli version",
+    "cmd_version": "Show PuppyLauncherCli version",
     "cmd_install": "Install game, mod loaders, mods, packs, modpacks",
     "cmd_remove": "Remove game, mod loaders, mods, packs, modpacks",
     "cmd_update": "Refresh game metadata sources",
@@ -15,13 +15,13 @@
     "cmd_world": "Manage worlds (current game version)",
     "cmd_resource": "Manage resource packs (current game version)",
     "cmd_config": "Show or edit configuration",
-    "see_help": "Run 'meowlaunchcli <command> help' for more details."
+    "see_help": "Run 'puppylaunchcli <command> help' for more details."
   },
   "error": {
     "unknown_command": "Unknown command: %s"
   },
   "game": {
-    "usage": "Usage: meowlaunchcli game <help|switch|current|show>",
+    "usage": "Usage: puppylaunchcli game <help|switch|current|show>",
     "switched": "Switched to",
     "help": {
       "title": "Game version management:",
@@ -31,7 +31,7 @@
     }
   },
   "config": {
-    "usage": "Usage: meowlaunchcli config <java|memory|window|args|precmd|postcmd|gfx|help>",
+    "usage": "Usage: puppylaunchcli config <java|memory|window|args|precmd|postcmd|gfx|help>",
     "help": {
       "title": "Configuration:",
       "java_set": "Set java version (e.g. 21)",
@@ -45,7 +45,7 @@
     }
   },
   "account": {
-    "usage": "Usage: meowlaunchcli account local <add|del> <username>",
+    "usage": "Usage: puppylaunchcli account local <add|del> <username>",
     "help": {
       "title": "Account management:",
       "local_add": "Add a local offline account",

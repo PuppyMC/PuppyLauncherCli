@@ -1,12 +1,12 @@
-# MeowLauncherCli
+# PuppyLauncherCli
 
 純コマンドラインの Minecraft ランチャー。Busbox スタイル、対話型 UI なし。
 
 ## クイックスタート
 
 ```
-meowlaunchcli            # ヘルプを表示
-meowlaunchcli version    # バージョンを表示
+puppylaunchcli            # ヘルプを表示
+puppylaunchcli version    # バージョンを表示
 ```
 
 ## 利用可能なコマンド

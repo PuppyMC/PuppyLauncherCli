@@ -1,5 +1,5 @@
 /*
- * Help text for MeowLauncherCli.
+ * Help text for PuppyLauncherCli.
  *
  * All user-facing strings are pulled from the embedded language archives
  * via I18n(); nothing translatable lives here.
@@ -12,7 +12,7 @@
 
 void Help_Print(void)
 {
-    printf("MeowLauncherCli - %s\n\n", I18n("help.tagline"));
+    printf("PuppyLauncherCli - %s\n\n", I18n("help.tagline"));
     printf("%s\n\n", I18n("help.usage"));
     printf("%s\n", I18n("help.commands_header"));
     printf("  %-10s %s\n", "help",     I18n("help.cmd_help"));

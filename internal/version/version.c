@@ -1,5 +1,5 @@
 /*
- * Version information for MeowLauncherCli.
+ * Version information for PuppyLauncherCli.
  */
 
 #include <stdio.h>
@@ -14,6 +14,6 @@
 
 void Version_Print(void)
 {
-    fprintf(stdout, "MeowLauncherCli v%s build %s\n",
+    fprintf(stdout, "PuppyLauncherCli v%s build %s\n",
             VERSION_STRING, GIT_VERSION);
 }

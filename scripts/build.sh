@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #
-# Build MeowLauncherCli.
+# Build PuppyLauncherCli.
 #
 # Usage:
 #   ./scripts/build.sh
 #
 # Toolchain:
 #   Linux           musl-gcc, statically linked (default)
-#   Windows/MinGW   gcc (MSYS2), meowlaunchcli.exe
+#   Windows/MinGW   gcc (MSYS2), puppylaunchcli.exe
 #
 # Environment overrides:
 #   CC           C compiler (auto-selected per platform, override if needed)
@@ -117,7 +117,7 @@ if [ "${COVERAGE:-0}" = "1" ]; then
     CFLAGS="$CFLAGS --coverage"
 fi
 mkdir -p "$out_dir"
-out_bin="$out_dir/meowlaunchcli${bin_suffix}"
+out_bin="$out_dir/puppylaunchcli${bin_suffix}"
 
 # Compile each translation unit to an object in parallel, then link.
 # Everything lands in build/ — build.sh must never touch build_test/.

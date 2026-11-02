@@ -1,8 +1,8 @@
-# MeowLauncherCli
+# PuppyLauncherCli
 
-<a href="https://github.com/MoeCinnamo/MeowLauncherCli/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/MoeCinnamo/MeowLauncherCli/ci.yml?branch=main&style=flat-square"></a>
-<a href="https://codecov.io/gh/MoeCinnamo/MeowLauncherCli"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/MoeCinnamo/MeowLauncherCli?style=flat-square"></a>
-<a href="https://github.com/MoeCinnamo/MeowLauncherCli/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/MoeCinnamo/MeowLauncherCli?style=flat-square"></a>
+<a href="https://github.com/PuppyMC/PuppyLauncherCli/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/PuppyMC/PuppyLauncherCli/ci.yml?branch=main&style=flat-square"></a>
+<a href="https://codecov.io/gh/PuppyMC/PuppyLauncherCli"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/PuppyMC/PuppyLauncherCli?style=flat-square"></a>
+<a href="https://github.com/PuppyMC/PuppyLauncherCli/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/PuppyMC/PuppyLauncherCli?style=flat-square"></a>
 
 [繁體中文 (台湾)](README-zh_TW.md) [English](README.md) [繁體中文 (香港)](README-zh_HK.md) [日本語](README-ja_JP.md)
 
@@ -10,16 +10,16 @@
 
 ## 簡介
 
-MeowLauncherCli 是一個**純命令列的 Minecraft 啟動器**。它的目標，是把玩 Minecraft 需要的一切——遊戲版本、模組、Skin、世界存檔等等——全部收進單一隻可腳本化、沒有圖形介面的命令列程式。
+PuppyLauncherCli 是一個**純命令列的 Minecraft 啟動器**。它的目標，是把玩 Minecraft 需要的一切——遊戲版本、模組、Skin、世界存檔等等——全部收進單一隻可腳本化、沒有圖形介面的命令列程式。
 
 沒有視窗、沒有圖示、沒有工作列圖示，只有終端機。有人路過偷瞄一眼，只會以為你在忙正事。
 
 ## 用法
 
 ```sh
-meowlaunchcli            # 不帶參數：顯示幫助列表（busybox 風格）
-meowlaunchcli version    # MeowLauncherCli v0.0.1 build <git>
-meowlaunchcli <command>  # 執行子指令
+puppylaunchcli            # 不帶參數：顯示幫助列表（busybox 風格）
+puppylaunchcli version    # PuppyLauncherCli v0.0.1 build <git>
+puppylaunchcli <command>  # 執行子指令
 ```
 
 ## 指令
@@ -27,7 +27,7 @@ meowlaunchcli <command>  # 執行子指令
 | 指令       | 說明 |
 | ---------- | ---- |
 | `help`     | 顯示此幫助列表 |
-| `version`  | 顯示 MeowLauncherCli 版本號 |
+| `version`  | 顯示 PuppyLauncherCli 版本號 |
 | `install`  | 安裝遊戲、模組載入器、模組、資源包、整合包 |
 | `remove`   | 移除遊戲、模組載入器、模組、資源包、整合包 |
 | `update`   | 更新遊戲來源 |
@@ -50,7 +50,7 @@ meowlaunchcli <command>  # 執行子指令
 ./scripts/test.sh      # 建置 + 命令列冒煙測試
 ```
 
-Windows（MSYS2/MinGW）下同一支腳本使用 `gcc`，產出 `meowlaunchcli.exe`。
+Windows（MSYS2/MinGW）下同一支腳本使用 `gcc`，產出 `puppylaunchcli.exe`。
 
 可環境變數覆蓋：`CC`、`CFLAGS`、`LDFLAGS`、`LANGS`、`GIT_VERSION`；加上 `COVERAGE=1` 可輸出程式碼覆蓋率資訊。
 

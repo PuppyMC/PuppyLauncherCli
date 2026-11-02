@@ -24,9 +24,9 @@ static int failures = 0;
 int main(void)
 {
     /* Wipe any leftover users.json next to the test binary (build_test/). */
-    remove("build_test/.meowlaunch/data/users.json");
-    remove("build_test/.meowlaunch/data");
-    remove("build_test/.meowlaunch");
+    remove("build_test/.puppylaunch/data/users.json");
+    remove("build_test/.puppylaunch/data");
+    remove("build_test/.puppylaunch");
 
     CHECK(Account_Local_Add("alice") == 0, "add alice succeeds");
     CHECK(Account_Local_Add("bob") == 0, "add bob succeeds");
@@ -43,19 +43,19 @@ int main(void)
     CHECK(Account_Local_Show() == 0, "account local show runs");
 
     /* Missing users.json: Account_Local_Show prints (none). */
-    remove("build_test/.meowlaunch/data/users.json");
+    remove("build_test/.puppylaunch/data/users.json");
     CHECK(Account_Local_Show() == 0, "show with no users.json");
 
     /* Make data path a file (not dir): usersfile_save fails cross-platform. */
 #ifdef _WIN32
-    system("rmdir /s /q build_test\\.meowlaunch\\data >nul 2>&1");
+    system("rmdir /s /q build_test\\.puppylaunch\\data >nul 2>&1");
 #else
-    system("rm -rf build_test/.meowlaunch/data");
+    system("rm -rf build_test/.puppylaunch/data");
 #endif
-    FILE *f = fopen("build_test/.meowlaunch/data", "w");
+    FILE *f = fopen("build_test/.puppylaunch/data", "w");
     fclose(f);
     CHECK(Account_Local_Add("badpath") != 0, "add to non-dir data fails");
-    remove("build_test/.meowlaunch/data");
+    remove("build_test/.puppylaunch/data");
 
     return failures ? 1 : 0;
 }

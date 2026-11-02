@@ -12,7 +12,7 @@ vulnerabilities.
 
 ## Scope
 
-- The launcher writes only to `~/.meowlaunch/` (`%USERPROFILE%\.meowlaunch\`
+- The launcher writes only to `~/.puppylaunch/` (`%USERPROFILE%\.puppylaunch\`
   on Windows). It does not contact any network service in the current
   release.
 - Local accounts are stored in plaintext in `users.json`; passwords are not

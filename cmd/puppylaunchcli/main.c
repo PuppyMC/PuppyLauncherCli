@@ -1,5 +1,5 @@
 /*
- * MeowLauncherCli entry point.
+ * PuppyLauncherCli entry point.
  *
  * Non-interactive, busybox-style: running without arguments (or with
  * "help") prints the help list; otherwise the first argument selects a
