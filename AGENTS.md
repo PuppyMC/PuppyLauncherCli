@@ -532,6 +532,7 @@ be added to explain the reason, in the following format:
 // [musl-compat] Use freopen instead of stdout = fopen(), because stdout is
 // read-only in musl
 freopen("output.log", "w", stdout);
+```
 
 **AI Confirmation Receipt**: Before commencing any coding task, the AI should
 confirm in its internal thoughts or responses that it has read and comprehended
