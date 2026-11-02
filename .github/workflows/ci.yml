@@ -22,8 +22,8 @@ jobs:
           apk update --no-cache
           apk upgrade --no-cache
           apk add --no-cache \
-          sudo bash zsh build-base gcc make pkgconf fontconfig fontconfig-dev \
-          git git-lfs nodejs npm lcov gzip libpng-dev curl gcovr gpg
+          sudo bash zsh build-base gcc make pkgconf fontconfig fontconfig-dev git git-lfs \
+          nodejs npm lcov gzip libpng-dev curl gcovr gpg gnupg pinentry-tty 
       - uses: actions/checkout@v7
       - name: Build and smoke test
         run: ./scripts/test.sh
@@ -61,8 +61,8 @@ jobs:
           apk update --no-cache
           apk upgrade --no-cache
           apk add --no-cache \
-          sudo bash zsh build-base gcc make pkgconf fontconfig fontconfig-dev \
-          git git-lfs nodejs npm lcov gzip libpng-dev curl gcovr gpg
+          sudo bash zsh build-base gcc make pkgconf fontconfig fontconfig-dev git git-lfs \
+          nodejs npm lcov gzip libpng-dev curl gcovr gpg gnupg pinentry-tty 
       - uses: actions/checkout@v7
       - name: Build and smoke test
         run: ./scripts/test.sh
@@ -85,8 +85,8 @@ jobs:
           apk update --no-cache
           apk upgrade --no-cache
           apk add --no-cache \
-          sudo bash zsh build-base gcc make pkgconf fontconfig fontconfig-dev \
-          git git-lfs nodejs npm lcov gzip libpng-dev curl gcovr gpg
+          sudo bash zsh build-base gcc make pkgconf fontconfig fontconfig-dev git git-lfs \
+          nodejs npm lcov gzip libpng-dev curl gcovr gpg gnupg pinentry-tty 
       - uses: actions/checkout@v7
       - name: Build and smoke test
         run: ./scripts/test.sh
@@ -109,8 +109,8 @@ jobs:
           apk update --no-cache
           apk upgrade --no-cache
           apk add --no-cache \
-          sudo bash zsh build-base gcc make pkgconf fontconfig fontconfig-dev \
-          git git-lfs nodejs npm lcov gzip libpng-dev curl gcovr gpg
+          sudo bash zsh build-base gcc make pkgconf fontconfig fontconfig-dev git git-lfs \
+          nodejs npm lcov gzip libpng-dev curl gcovr gpg gnupg pinentry-tty 
       - uses: actions/checkout@v7
       - name: Build and smoke test
         run: ./scripts/test.sh
@@ -133,8 +133,8 @@ jobs:
           apk update --no-cache
           apk upgrade --no-cache
           apk add --no-cache \
-          sudo bash zsh build-base gcc make pkgconf fontconfig fontconfig-dev \
-          git git-lfs nodejs npm lcov gzip libpng-dev curl gcovr gpg
+          sudo bash zsh build-base gcc make pkgconf fontconfig fontconfig-dev git git-lfs \
+          nodejs npm lcov gzip libpng-dev curl gcovr gpg gnupg pinentry-tty 
       - uses: actions/checkout@v7
       - name: Build and smoke test
         run: ./scripts/test.sh
